@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 public class MineField {
+    int numMines;
     private int rows;
     private int columns;
     private ArrayList<ArrayList<Square>> squares = new ArrayList<>();
@@ -78,6 +79,7 @@ public class MineField {
         int y;
         Random rnd = new Random();
         int number = rnd.nextInt(rows*columns - 4) + 3;
+        numMines = number;
 
         // Add a random amount of mines to the field in range 3 to (rows*columns - 4)
         for (int i = 0; i < number; i++) {
