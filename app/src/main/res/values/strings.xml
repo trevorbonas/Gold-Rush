@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Mine Seeker</string>
     <string name="action_settings">Settings</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_intro">FullscreenActivity</string>
+    <string name="intro_title">Gold Rush!</string>
+    <string name="skip_button">Skip</string>
 </resources>

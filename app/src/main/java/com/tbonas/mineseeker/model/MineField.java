@@ -1,15 +1,16 @@
 package com.tbonas.mineseeker.model;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class MineField {
-    int numMines;
+    int numMines; // Total number of mines on the mine field
     private int rows;
     private int columns;
     private ArrayList<ArrayList<Square>> squares = new ArrayList<>();
-    private static MineField instance;
+    private static MineField instance; // Singleton instance of MineField
 
     public static MineField getInstance() {
         if (instance == null) {
@@ -22,6 +23,7 @@ public class MineField {
         // Private for singleton use
         rows = 10; // Default, starting values upon app boot
         columns = 10;
+        numMines = 7;
         init();
     }
 
@@ -71,6 +73,13 @@ public class MineField {
         this.columns = columns;
     }
 
+    public void setNumMines(int x) {
+        if (x < 0 || x > columns * rows) {
+            throw new InvalidParameterException();
+        }
+        numMines = x;
+    }
+
     // Adds a random amount of mines to the squares
     // and updates all neighbours' nearby value by +1
     // Called when Play Game button is pressed
@@ -78,11 +87,9 @@ public class MineField {
         int x;
         int y;
         Random rnd = new Random();
-        int number = rnd.nextInt(rows*columns - 4) + 3;
-        numMines = number;
 
         // Add a random amount of mines to the field in range 3 to (rows*columns - 4)
-        for (int i = 0; i < number; i++) {
+        for (int i = 0; i < numMines; i++) {
             // Random position on field
             x = rnd.nextInt(columns);
             y = rnd.nextInt(rows);
