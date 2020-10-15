@@ -11,4 +11,5 @@
     <string name="play_game">Play Game</string>
     <string name="options">Options</string>
     <string name="help">Help</string>
+    <string name="title_activity_options">Options</string>
 </resources>

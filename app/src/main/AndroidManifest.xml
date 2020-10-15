@@ -7,18 +7,26 @@
         android:icon="@mipmap/ic_launcher"
         android:label="DoF Calculator"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
         android:screenOrientation="landscape"
+        android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".HelpActivity"
-            android:label="@string/title_activity_help"
+            android:name=".OptionsActivity"
+            android:label="@string/title_activity_options"
             android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".MainActivity"
-            android:configChanges="keyboard|orientation|keyboardHidden|screenSize"
             android:screenOrientation="landscape"
+            android:configChanges="keyboard|orientation|keyboardHidden|screenSize"
             >
+
         </activity>
+        <activity
+            android:name=".HelpActivity"
+            android:configChanges="keyboard|orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_help"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".IntroActivity"
             android:configChanges="keyboard|orientation|keyboardHidden|screenSize"
@@ -36,7 +44,7 @@
             android:configChanges="keyboard|orientation|keyboardHidden|screenSize"
             android:label="Gold Rush"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"
