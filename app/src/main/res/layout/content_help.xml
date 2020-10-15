@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="564dp"
+        android:layout_height="286dp"
+        android:text="Playing\n\nTo play Gold Rush press the &quot;Play Game&quot; button on the main menu. The aim of the game is to find all the gold with the fewest tries. Pressing on a square will either show a number, which is the number of gold ore that can be found in that square's row and/or column, or will reveal some gold ore. Pressing the square of an already found gold ore will reveal the number of other gold ores in that square's row and/or column.\n\nOptions\n\nTo change the game options press the &quot;Options&quot; button on the main menu. In options the number of rows and columns in the game and the number of gold ores present can be changed.\n\nCredit\n\nMade by Trevor Bonas, October, 2020."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

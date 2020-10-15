@@ -12,56 +12,53 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="144dp"
         android:fontFamily="@font/rye"
-        android:text="Main Menu"
+        android:text="@string/main_menu_title"
         android:textAlignment="center"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="144dp"
+        android:id="@+id/playButton"
+        android:layout_width="209dp"
         android:layout_height="66dp"
+        android:layout_marginEnd="68dp"
         android:layout_marginBottom="20dp"
-        android:text="Play Game"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.199"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="@string/play_game"
+        app:layout_constraintBottom_toTopOf="@+id/optionsButton"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="144dp"
+        android:id="@+id/optionsButton"
+        android:layout_width="209dp"
         android:layout_height="66dp"
-        android:text="Options"
+        android:layout_marginEnd="68dp"
+        android:text="@string/options"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.536"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.498" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="144dp"
+        android:id="@+id/helpButton"
+        android:layout_width="209dp"
         android:layout_height="66dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="100dp"
-        android:text="Help"
+        android:layout_marginEnd="68dp"
+        android:text="@string/help"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/optionsButton" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="268dp"
         android:layout_height="240dp"
+        android:layout_marginStart="68dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.491"
         app:srcCompat="@drawable/ic_launcher_background" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -76,7 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="362dp" />
+        app:layout_constraintGuide_percent="0.499316" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"

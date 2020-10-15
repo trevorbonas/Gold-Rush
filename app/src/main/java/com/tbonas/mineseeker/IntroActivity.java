@@ -2,6 +2,7 @@ package com.tbonas.mineseeker;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -17,13 +18,14 @@ public class IntroActivity extends android.app.Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
 
-        Button skip_button = (Button)findViewById(R.id.skip_button);
+        final Intent homeIntent = new Intent(IntroActivity.this,
+                MainActivity.class);
+
+        Button skipButton = (Button)findViewById(R.id.skip_button);
         findViewById(R.id.skip_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent home_intent = new Intent(IntroActivity.this,
-                        MainActivity.class);
-                startActivity(home_intent);
+                startActivity(homeIntent);
             }
         });
 
@@ -31,5 +33,17 @@ public class IntroActivity extends android.app.Activity {
         Animation title_animation = AnimationUtils.loadAnimation(this,
                 R.anim.intro_animation);
         title.startAnimation(title_animation);
+
+        new CountDownTimer(7000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                // Do nothing
+            }
+
+            @Override
+            public void onFinish() {
+                startActivity(homeIntent);
+            }
+        }.start();
     }
 }
