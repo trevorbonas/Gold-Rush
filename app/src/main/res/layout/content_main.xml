@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/menu_background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <TextView
@@ -11,9 +12,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="144dp"
-        android:fontFamily="@font/rye"
+        android:fontFamily="@font/ewert"
         android:text="@string/main_menu_title"
         android:textAlignment="center"
+        android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
@@ -88,4 +90,5 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_end="190dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

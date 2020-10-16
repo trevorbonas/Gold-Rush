@@ -25,6 +25,7 @@
         android:layout_marginBottom="16dp"
         android:text="TextView"
         android:textAlignment="center"
+        android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/mineTable"
         app:layout_constraintStart_toStartOf="@+id/mineTable" />
 
@@ -35,6 +36,7 @@
         android:layout_marginBottom="16dp"
         android:text="TextView"
         android:textAlignment="center"
+        android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/mineTable"
         app:layout_constraintEnd_toEndOf="@+id/mineTable" />
 

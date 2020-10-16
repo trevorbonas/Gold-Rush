@@ -3,11 +3,16 @@ package com.tbonas.mineseeker;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 
 import com.tbonas.mineseeker.model.Mine;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
@@ -68,8 +73,12 @@ public class GameActivity extends AppCompatActivity {
                         1.0f));
                 button.setPadding(0, 0, 0, 0);
                 buttons[column][row] = button;
-
                 button.setBackgroundResource(R.drawable.rock_two);
+
+                button.setTextColor(
+                        getResources().getColor(R.color.solid_white, getTheme()));
+                button.setShadowLayer(0.1f, -4, 4,
+                        getResources().getColor(R.color.solid_black, getTheme()));
 
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -79,22 +88,16 @@ public class GameActivity extends AppCompatActivity {
                 });
 
                 tableRow.addView(button);
-                /*
-                // From Dr. Brian Fraser's video
-                int newWidth = button.getWidth();
-                int newHeight = button.getHeight();
-                Bitmap orignalBitmap = BitmapFactory.decodeResource(getResources(),
-                        R.drawable.rock);
-                Bitmap scaledBitmap = Bitmap.createScaledBitmap(orignalBitmap, newWidth,
-                        newHeight, true);
-                Resources resource = getResources();
-                button.setBackground(new BitmapDrawable(resource, scaledBitmap)); */
             }
         }
     }
 
     private void gridButtonClicked(int x, int y) {
         Button button = buttons[x][y];
+
+        // Lock button sizes
+        lockButtonSizes();
+
         if (!mine.goldFound(x, y)) {
             button.setText("" + mine.getNearby(x, y));
             mine.setSquareClicked(true, x, y);
@@ -126,6 +129,22 @@ public class GameActivity extends AppCompatActivity {
             showNewNearby(x, y);
         }
         updateScores();
+    }
+
+    private void lockButtonSizes() {
+        for (int row = 0; row < mine.getRows(); row++) {
+            for (int column = 0; column < mine.getColumns(); column++) {
+                Button button = buttons[column][row];
+
+                int width = button.getWidth();
+                button.setMinWidth(width);
+                button.setMaxWidth(width);
+
+                int height = button.getHeight();
+                button.setMinHeight(height);
+                button.setMaxHeight(height);
+            }
+        }
     }
 
     private void showNewNearby(int x, int y) {

@@ -5,7 +5,7 @@
     android:id="@+id/boxInsetLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FDD835"
+    android:background="@drawable/intro_background"
     tools:context=".IntroActivity">
 
     <Button
@@ -19,21 +19,30 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.973"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/intro_title"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/intro_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/rye"
+        android:fontFamily="@font/vast_shadow"
         android:text="@string/intro_title"
-        android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="48sp"
+        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="468dp"
+        android:text="@string/intro_credit"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toStartOf="@+id/skip_button"
+        app:layout_constraintTop_toBottomOf="@+id/intro_title" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

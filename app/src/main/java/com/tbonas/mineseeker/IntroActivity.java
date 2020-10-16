@@ -29,7 +29,9 @@ public class IntroActivity extends android.app.Activity {
 
             @Override
             public void onFinish() {
+
                 startActivity(homeIntent);
+                finish();
             }
         }.start();
 
@@ -39,6 +41,7 @@ public class IntroActivity extends android.app.Activity {
             public void onClick(View view) {
                 startActivity(homeIntent);
                 timer.cancel();
+                finish();
             }
         });
 
