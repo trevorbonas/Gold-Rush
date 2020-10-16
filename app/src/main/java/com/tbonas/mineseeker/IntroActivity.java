@@ -21,20 +21,7 @@ public class IntroActivity extends android.app.Activity {
         final Intent homeIntent = new Intent(IntroActivity.this,
                 MainActivity.class);
 
-        Button skipButton = (Button)findViewById(R.id.skip_button);
-        findViewById(R.id.skip_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(homeIntent);
-            }
-        });
-
-        TextView title = findViewById(R.id.intro_title);
-        Animation title_animation = AnimationUtils.loadAnimation(this,
-                R.anim.intro_animation);
-        title.startAnimation(title_animation);
-
-        new CountDownTimer(7000, 1000) {
+        final CountDownTimer timer = new CountDownTimer(7000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 // Do nothing
@@ -45,5 +32,19 @@ public class IntroActivity extends android.app.Activity {
                 startActivity(homeIntent);
             }
         }.start();
+
+        Button skipButton = (Button)findViewById(R.id.skip_button);
+        findViewById(R.id.skip_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(homeIntent);
+                timer.cancel();
+            }
+        });
+
+        TextView title = findViewById(R.id.intro_title);
+        Animation title_animation = AnimationUtils.loadAnimation(this,
+                R.anim.intro_animation);
+        title.startAnimation(title_animation);
     }
 }

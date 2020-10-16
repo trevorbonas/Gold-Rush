@@ -21,9 +21,9 @@ public class MineField {
 
     private MineField() {
         // Private for singleton use
-        rows = 10; // Default, starting values upon app boot
-        columns = 10;
-        numMines = 7;
+        rows = 4; // Default, starting values upon app boot
+        columns = 7;
+        numMines = 5;
         init();
     }
 
@@ -40,16 +40,16 @@ public class MineField {
     }
 
     // Deletes or adds rows/columns
-    public void resize(int rows, int columns) {
+    public void resize(int columns, int rows) {
         if (rows < this.rows) {
-            for (int i = 0; i < columns; i++) {
+            for (int i = 0; i < this.columns; i++) {
                 for (int j = this.rows - 1; j >= rows; j--) {
                     squares.get(i).remove(j);
                 }
             }
         }
         else if (rows > this.rows) {
-            for (int i = 0; i < columns; i++) {
+            for (int i = 0; i < this.columns; i++) {
                 for (int j = this.rows - 1; j < rows; j++) {
                     squares.get(i).add(new Square());
                 }
@@ -138,5 +138,13 @@ public class MineField {
                 squares.get(i).get(j).setMinesNearby(0);
             }
         }
+    }
+
+    public int getRows() {
+        return this.rows;
+    }
+
+    public int getColumns() {
+        return this.columns;
     }
 }
