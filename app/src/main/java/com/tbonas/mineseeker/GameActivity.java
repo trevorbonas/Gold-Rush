@@ -69,6 +69,8 @@ public class GameActivity extends AppCompatActivity {
                 button.setPadding(0, 0, 0, 0);
                 buttons[column][row] = button;
 
+                button.setBackgroundResource(R.drawable.rock_two);
+
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
