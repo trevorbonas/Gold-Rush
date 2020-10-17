@@ -2,18 +2,17 @@
 
 <resources>
     <string-array name="board_sizes">
-        <item>6 X 3</item>
-        <item>7 X 4</item>
+        <item>6 X 4</item>
         <item>10 X 5</item>
+        <item>15 X 6</item>
     </string-array>
 
     <integer-array name="mine_num_options">
         <item>1</item>
-        <item>3</item>
         <item>6</item>
-        <item>8</item>
         <item>10</item>
         <item>15</item>
+        <item>20</item>
         <item>35</item>
     </integer-array>
 </resources>

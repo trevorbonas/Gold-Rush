@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/menu_background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <TableLayout
         android:id="@+id/mineTable"
-        android:layout_width="585dp"
+        android:layout_width="520dp"
         android:layout_height="wrap_content"
         android:stretchColumns="*"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,7 +26,7 @@
         android:layout_marginBottom="16dp"
         android:text="TextView"
         android:textAlignment="center"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/mineTable"
         app:layout_constraintStart_toStartOf="@+id/mineTable" />
 
@@ -36,7 +37,7 @@
         android:layout_marginBottom="16dp"
         android:text="TextView"
         android:textAlignment="center"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/mineTable"
         app:layout_constraintEnd_toEndOf="@+id/mineTable" />
 

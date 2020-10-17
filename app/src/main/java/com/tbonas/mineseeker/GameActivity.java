@@ -14,6 +14,7 @@ import com.tbonas.mineseeker.model.Mine;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.View;
 import android.widget.Button;
@@ -113,6 +114,9 @@ public class GameActivity extends AppCompatActivity {
             foundOre++;
             if (foundOre >= mine.getNumGold()) {
                 // End game
+                FragmentManager manager = getSupportFragmentManager();
+                WinFragment dialog = new WinFragment();
+                dialog.show(manager, "Launching the fragment");
             }
 
             // From Dr. Brian Fraser's video

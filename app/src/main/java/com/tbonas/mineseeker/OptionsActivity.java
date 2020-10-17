@@ -50,7 +50,14 @@ public class OptionsActivity extends AppCompatActivity {
                     int columns = Integer.parseInt(strings[0]);
                     int rows = Integer.parseInt(strings[1]);
 
-                    field.resize(columns, rows);
+                    if (field.getNumGold() > (columns * rows) ) {
+                        Toast.makeText(OptionsActivity.this,
+                                "Number of ores greater than dimensions of mine",
+                                Toast.LENGTH_LONG).show();
+                    }
+                    else {
+                        field.resize(columns, rows);
+                    }
                 }
             });
 

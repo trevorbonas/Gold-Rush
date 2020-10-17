@@ -1,0 +1,35 @@
+package com.tbonas.mineseeker;
+
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatDialogFragment;
+
+public class WinFragment extends AppCompatDialogFragment {
+    @NonNull
+    @Override
+    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+        // Create the view to show
+        View v = LayoutInflater.from(getActivity()).inflate(R.layout.win_layout, null);
+        DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                getActivity().finish();
+            }
+        };
+
+        // Build the alert dialog
+        return new AlertDialog.Builder(getActivity())
+                .setTitle("Game Over")
+                .setView(v)
+                .setPositiveButton(android.R.string.ok, listener)
+                .create();
+    }
+}
