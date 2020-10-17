@@ -8,6 +8,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import com.tbonas.mineseeker.model.Mine;
@@ -16,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
@@ -94,24 +96,32 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void gridButtonClicked(int x, int y) {
+        final MediaPlayer mp;
         Button button = buttons[x][y];
 
         // Lock button sizes
         lockButtonSizes();
 
-        if (!mine.goldFound(x, y)) {
+        if (!mine.goldFound(x, y) && !(mine.squareClicked(x, y))) {
             button.setText("" + mine.getNearby(x, y));
             mine.setSquareClicked(true, x, y);
             scansUsed++;
+            mp = MediaPlayer.create(GameActivity.this, R.raw.blip);
+            mp.start();
         }
-        else if (mine.goldFound(x, y) && mine.squareClicked(x, y)) {
+        else if (mine.goldFound(x, y) && mine.squareClicked(x, y)
+        && !(mine.squareGoldClicked(x, y))) {
             button.setText("" + mine.getNearby(x, y));
             mine.setSquareGoldClicked(true, x, y);
             scansUsed++;
+            mp = MediaPlayer.create(GameActivity.this, R.raw.blip);
+            mp.start();
         }
         else if (mine.goldFound(x, y) && !(mine.squareClicked(x, y))){
             mine.setSquareClicked(true, x, y);
             foundOre++;
+            mp = MediaPlayer.create(GameActivity.this, R.raw.clang);
+            mp.start();
             if (foundOre >= mine.getNumGold()) {
                 // End game
                 FragmentManager manager = getSupportFragmentManager();

@@ -39,7 +39,8 @@ public class OptionsActivity extends AppCompatActivity {
         for (int i = 0; i < dimensions.length; i++) {
             final String dimension = dimensions[i];
 
-            RadioButton button = new RadioButton(this);
+            final RadioButton button = new RadioButton(this);
+            button.setTextColor(getResources().getColor(R.color.solid_white, getTheme()));
             button.setText(dimension);
             dimensionGroup.addView(button);
 
@@ -53,7 +54,7 @@ public class OptionsActivity extends AppCompatActivity {
                     if (field.getNumGold() > (columns * rows) ) {
                         Toast.makeText(OptionsActivity.this,
                                 "Number of ores greater than dimensions of mine",
-                                Toast.LENGTH_LONG).show();
+                                Toast.LENGTH_SHORT).show();
                     }
                     else {
                         field.resize(columns, rows);
@@ -67,6 +68,7 @@ public class OptionsActivity extends AppCompatActivity {
             final int number = numMines[i];
 
             final RadioButton button = new RadioButton(this);
+            button.setTextColor(getResources().getColor(R.color.solid_white, getTheme()));
             button.setText("" + number);
 
             numMinesGroup.addView(button);
@@ -77,7 +79,7 @@ public class OptionsActivity extends AppCompatActivity {
                     if (number > (field.getColumns() * field.getRows()) ) {
                         Toast.makeText(OptionsActivity.this,
                                 "Number of ores greater than dimensions of mine",
-                                Toast.LENGTH_LONG).show();
+                                Toast.LENGTH_SHORT).show();
                     }
                     else {
                         field.setNumMines(number);

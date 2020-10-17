@@ -45,4 +45,16 @@
         app:layout_constraintEnd_toStartOf="@+id/skip_button"
         app:layout_constraintTop_toBottomOf="@+id/intro_title" />
 
+    <ImageView
+        android:id="@+id/introGold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gold_rush_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intro_title"
+        app:layout_constraintVertical_bias="0.234" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

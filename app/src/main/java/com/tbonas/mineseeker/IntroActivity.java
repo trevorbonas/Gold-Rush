@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class IntroActivity extends android.app.Activity {
@@ -46,8 +47,13 @@ public class IntroActivity extends android.app.Activity {
         });
 
         TextView title = findViewById(R.id.intro_title);
-        Animation title_animation = AnimationUtils.loadAnimation(this,
+        Animation titleAnimation = AnimationUtils.loadAnimation(this,
                 R.anim.intro_animation);
-        title.startAnimation(title_animation);
+        title.startAnimation(titleAnimation);
+
+        ImageView gold = findViewById(R.id.introGold);
+        Animation goldAnimation = AnimationUtils.loadAnimation(this,
+                R.anim.gold_animation);
+        gold.startAnimation(goldAnimation);
     }
 }
