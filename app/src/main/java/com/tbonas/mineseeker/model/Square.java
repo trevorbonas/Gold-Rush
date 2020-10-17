@@ -2,31 +2,49 @@ package com.tbonas.mineseeker.model;
 
 public class Square {
     Boolean clicked;
-    Boolean mine;
-    int minesNearby;
-    public void Square() {
-        mine = false;
+    Boolean gold;
+    Boolean goldClicked;
+    int goldNearby;
+
+    public Square() {
+        gold = false;
         clicked = false;
-        minesNearby = 0;
+        goldNearby = 0;
     }
 
-    public void setMine(Boolean mine) {
-        this.mine = mine;
+    public void setGold(Boolean mine) {
+        this.gold = mine;
     }
 
-    public void setMinesNearby(int number) {
-        minesNearby = number;
+    public void setGoldNearby(int number) {
+        this.goldNearby = number;
     }
 
-    public int getMinesNearby() {
-        return minesNearby;
+    public int getGoldNearby() {
+        return this.goldNearby;
     }
 
-    public void addMinesNearby(int n) {
-        minesNearby += n;
+    public void addGoldNearby(int n) {
+        this.goldNearby += n;
     }
 
     public void setClicked(Boolean setting) {
-        clicked = setting;
+        this.clicked = setting;
+    }
+
+    public void setGoldClicked(Boolean setting) {
+        this.goldClicked = setting;
+    }
+
+    public Boolean wasClicked() {
+        return this.clicked;
+    }
+
+    public Boolean wasGoldClicked() {
+        return this.goldClicked;
+    }
+
+    public Boolean isGold() {
+        return this.gold;
     }
 }

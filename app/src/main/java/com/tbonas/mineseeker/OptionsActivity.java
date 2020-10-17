@@ -2,7 +2,7 @@ package com.tbonas.mineseeker;
 
 import android.os.Bundle;
 
-import com.tbonas.mineseeker.model.MineField;
+import com.tbonas.mineseeker.model.Mine;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,7 +29,7 @@ public class OptionsActivity extends AppCompatActivity {
     }
 
     private void setupRadioButtons() {
-        final MineField field = MineField.getInstance();
+        final Mine field = Mine.getInstance();
         RadioGroup dimensionGroup = (RadioGroup)findViewById(R.id.b_size_group);
         String[] dimensions = getResources().getStringArray(R.array.board_sizes);
 

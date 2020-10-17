@@ -10,8 +10,8 @@
     <integer-array name="mine_num_options">
         <item>1</item>
         <item>3</item>
-        <item>5</item>
-        <item>7</item>
+        <item>6</item>
+        <item>8</item>
         <item>10</item>
         <item>15</item>
         <item>35</item>

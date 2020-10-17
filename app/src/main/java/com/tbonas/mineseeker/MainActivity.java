@@ -3,12 +3,9 @@ package com.tbonas.mineseeker;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.tbonas.mineseeker.model.MineField;
+import com.tbonas.mineseeker.model.Mine;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 
@@ -24,7 +21,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Only purpose of this is to initialize the singleton
-        MineField mineField = MineField.getInstance();
+        Mine mine = Mine.getInstance();
+        // Just in case we're returning from playing a game
+        // Makes sure there's no gold left in already found places
+        mine.clear();
 
         Button help = (Button)findViewById(R.id.helpButton);
         help.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +43,16 @@ public class MainActivity extends AppCompatActivity {
                 Intent optionsIntent = new Intent(MainActivity.this,
                         OptionsActivity.class);
                 startActivity(optionsIntent);
+            }
+        });
+
+        Button play = (Button)findViewById(R.id.playButton);
+        play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent playIntent = new Intent(MainActivity.this,
+                        GameActivity.class);
+                startActivity(playIntent);
             }
         });
 

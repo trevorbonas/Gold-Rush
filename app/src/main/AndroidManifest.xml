@@ -4,19 +4,29 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="DoF Calculator"
+        android:icon="@drawable/gold_rush_icon"
+        android:label="Gold Rush"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".OptionsActivity"
-            android:label="@string/title_activity_options"
-            android:theme="@style/AppTheme.NoActionBar"
+            android:name=".GameActivity"
+            android:configChanges="keyboard|orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_game"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+
+        </activity>
+        <activity
+            android:name=".OptionsActivity"
             android:configChanges="keyboard|orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_options"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar"
             >
 
         </activity>
@@ -26,7 +36,7 @@
             android:label="@string/title_activity_help"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".IntroActivity"
             android:configChanges="keyboard|orientation|keyboardHidden|screenSize"
