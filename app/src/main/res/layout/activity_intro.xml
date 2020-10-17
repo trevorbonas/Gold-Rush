@@ -25,7 +25,7 @@
         android:id="@+id/intro_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/vast_shadow"
+        android:fontFamily="@font/ewert"
         android:text="@string/intro_title"
         android:textColor="#000000"
         android:textSize="50sp"
