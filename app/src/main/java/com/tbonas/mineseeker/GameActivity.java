@@ -90,7 +90,7 @@ public class GameActivity extends AppCompatActivity {
 
                 button.setTextColor(
                         getResources().getColor(R.color.solid_white, getTheme()));
-                button.setShadowLayer(0.1f, -4, 4,
+                button.setShadowLayer(0.1f, 4, 0,
                         getResources().getColor(R.color.solid_black, getTheme()));
 
                 button.setOnClickListener(new View.OnClickListener() {
@@ -121,6 +121,8 @@ public class GameActivity extends AppCompatActivity {
         }
         else if (mine.goldFound(x, y) && mine.squareClicked(x, y)
         && !(mine.squareGoldClicked(x, y))) {
+            button.setTextColor(
+                    getResources().getColor(R.color.solid_black, getTheme()));
             button.setText("" + mine.getNearby(x, y));
             mine.setSquareGoldClicked(true, x, y);
             scansUsed++;
@@ -128,6 +130,8 @@ public class GameActivity extends AppCompatActivity {
             mp.start();
         }
         else if (mine.goldFound(x, y) && !(mine.squareClicked(x, y))){
+            button.setTextColor(
+                    getResources().getColor(R.color.solid_black, getTheme()));
             mine.setSquareClicked(true, x, y);
             foundOre++;
             mp = MediaPlayer.create(GameActivity.this, R.raw.clang);

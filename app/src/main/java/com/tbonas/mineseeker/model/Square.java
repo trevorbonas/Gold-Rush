@@ -1,5 +1,7 @@
 package com.tbonas.mineseeker.model;
 
+import java.security.InvalidParameterException;
+
 /**
  * The square the user interacts with.
  *
@@ -24,7 +26,11 @@ public class Square {
         this.gold = mine;
     }
 
-    public void setGoldNearby(int number) {
+    public void setGoldNearby(int number) throws InvalidParameterException {
+        if (number < 0) {
+            throw new InvalidParameterException("Square input gold nearby < 0");
+        }
+
         this.goldNearby = number;
     }
 
@@ -33,6 +39,10 @@ public class Square {
     }
 
     public void addGoldNearby(int n) {
+        if ((this.goldNearby + n) < 0) {
+            throw new InvalidParameterException("Input number makes goldnearby negative");
+        }
+
         this.goldNearby += n;
     }
 

@@ -3,6 +3,7 @@ package com.tbonas.mineseeker.model;
 import com.tbonas.mineseeker.MainActivity;
 import com.tbonas.mineseeker.OptionsActivity;
 
+import java.io.InvalidObjectException;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.Random;
@@ -43,6 +44,9 @@ public class Mine {
     // Adds column * rows number of Squares to squares
     // Called upon app boot
     public void init() {
+        if (columns < 0 || rows < 0) {
+            return;
+        }
         for (int i = 0; i < columns; i++) {
             squares.add(new ArrayList<Square>());
             for (int j = 0; j < rows; j++) {
@@ -53,7 +57,10 @@ public class Mine {
     }
 
     // Deletes or adds rows/columns
-    public void resize(int columns, int rows) {
+    public void resize(int columns, int rows){
+        if (this.columns <= 0 || this.rows <= 0) {
+            return;
+        }
         if (rows < this.rows) {
             for (int i = 0; i < this.columns; i++) {
                 for (int j = this.rows - 1; j >= rows; j--) {
@@ -87,9 +94,9 @@ public class Mine {
         this.columns = columns;
     }
 
-    public void setNumGold(int x) {
+    public void setNumGold(int x) throws InvalidParameterException {
         if (x < 0 || x > columns * rows) {
-            throw new InvalidParameterException();
+            throw new InvalidParameterException("Input gold number is invalid");
         }
         numGold = x;
     }
@@ -98,6 +105,9 @@ public class Mine {
     // and updates all neighbours' nearby value by +1
     // Called when Play Game button is pressed
     public void putGold() {
+        if (this.numGold <= 0) {
+            return;
+        }
         int x;
         int y;
         Random rnd = new Random();
@@ -149,6 +159,9 @@ public class Mine {
     }
 
     public void clear() {
+        if (columns < 0 || rows < 0) {
+            return;
+        }
         for (int i = 0; i < columns; i++) {
             for (int j = 0; j < rows; j++) {
                 squares.get(i).get(j).setClicked(false);
