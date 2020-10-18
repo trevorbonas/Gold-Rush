@@ -1,61 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/boxInsetLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/intro_background"
     tools:context=".IntroActivity">
 
-    <Button
-        android:id="@+id/skip_button"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="116dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="#423F3F"
-        android:text="@string/skip_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.973"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/intro_title"
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/rye"
-        android:text="@string/intro_title"
-        android:textColor="#000000"
-        android:textSize="50sp"
-        android:typeface="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="468dp"
-        android:text="@string/intro_credit"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toStartOf="@+id/skip_button"
-        app:layout_constraintTop_toBottomOf="@+id/intro_title" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-    <ImageView
-        android:id="@+id/introGold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/gold_rush_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/intro_title"
-        app:layout_constraintVertical_bias="0.234" />
+    <include layout="@layout/content_intro" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
