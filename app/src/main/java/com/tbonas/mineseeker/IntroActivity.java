@@ -45,6 +45,9 @@ public class IntroActivity extends android.app.Activity {
         }.start();
 
         Button skipButton = (Button)findViewById(R.id.skip_button);
+        int id = getResources().getIdentifier("skip_button", "string",
+                this.getPackageName());
+        skipButton.setText(id);
         findViewById(R.id.skip_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,6 +58,9 @@ public class IntroActivity extends android.app.Activity {
         });
 
         TextView title = findViewById(R.id.intro_title);
+        id = getResources().getIdentifier("intro_title", "string",
+                this.getPackageName());
+        title.setText(id);
        Animation titleAnimation = AnimationUtils.loadAnimation(this,
                 R.anim.intro_animation);
         title.startAnimation(titleAnimation);
@@ -63,5 +69,10 @@ public class IntroActivity extends android.app.Activity {
         Animation goldAnimation = AnimationUtils.loadAnimation(this,
                 R.anim.gold_animation);
         gold.startAnimation(goldAnimation);
+
+        TextView credit = findViewById(R.id.credit);
+        id = getResources().getIdentifier("intro_credit", "string",
+                this.getPackageName());
+        credit.setText(id);
     }
 }

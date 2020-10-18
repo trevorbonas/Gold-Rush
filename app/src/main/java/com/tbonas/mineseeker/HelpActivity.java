@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
+import android.widget.TextView;
 
 /**
  * Simply displays text about the game and provides a back button in the action bar.
@@ -27,5 +28,7 @@ public class HelpActivity extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
+        TextView helpText = findViewById(R.id.helpContent);
+        helpText.setText(R.string.helpText);
     }
 }

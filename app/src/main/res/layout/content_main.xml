@@ -8,12 +8,11 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/mainMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="144dp"
         android:fontFamily="@font/rye"
-        android:text="@string/main_menu_title"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
@@ -27,7 +26,6 @@
         android:layout_height="66dp"
         android:layout_marginEnd="68dp"
         android:layout_marginBottom="20dp"
-        android:text="@string/play_game"
         app:layout_constraintBottom_toTopOf="@+id/optionsButton"
         app:layout_constraintEnd_toStartOf="@+id/guideline2" />
 
@@ -36,7 +34,6 @@
         android:layout_width="209dp"
         android:layout_height="66dp"
         android:layout_marginEnd="68dp"
-        android:text="@string/options"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="parent"
@@ -48,7 +45,6 @@
         android:layout_height="66dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="68dp"
-        android:text="@string/help"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/optionsButton" />
 

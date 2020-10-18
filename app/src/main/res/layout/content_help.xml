@@ -8,10 +8,9 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/helpContent"
         android:layout_width="564dp"
         android:layout_height="286dp"
-        android:text="@string/helpText"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

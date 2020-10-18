@@ -60,6 +60,8 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void updateScores() {
+        // These textviews have text in the content_game.xml but they are placeholder
+        // so the actual text that is show is generated here
         TextView goldScore = (TextView)findViewById(R.id.showFound);
         goldScore.setText("" + foundOre + " gold found of " + mine.getNumGold());
 

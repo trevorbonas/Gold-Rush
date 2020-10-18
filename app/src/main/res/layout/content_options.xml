@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="148dp"
         android:layout_marginBottom="116dp"
-        android:text="@string/mine_size"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toStartOf="@+id/guideline5" />
@@ -24,7 +23,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginBottom="112dp"
-        android:text="@string/number_of_gold_bars"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/guideline5" />

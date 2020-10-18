@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -30,6 +31,12 @@ public class OptionsActivity extends AppCompatActivity {
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+
+        TextView dimensionsTitle = findViewById(R.id.mine_size);
+        dimensionsTitle.setText(R.string.mine_size);
+
+        TextView goldTitle = findViewById(R.id.num_ores_title);
+        goldTitle.setText(R.string.number_of_gold_bars);
 
         setupRadioButtons();
     }

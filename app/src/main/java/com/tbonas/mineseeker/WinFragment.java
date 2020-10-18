@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +22,9 @@ public class WinFragment extends AppCompatDialogFragment {
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         // Create the view to show
         View v = LayoutInflater.from(getActivity()).inflate(R.layout.win_layout, null);
+        TextView congrats = v.findViewById(R.id.winMessage);
+        congrats.setText(R.string.you_win);
+
         DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

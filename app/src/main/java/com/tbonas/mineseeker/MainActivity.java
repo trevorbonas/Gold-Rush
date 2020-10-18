@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * The main menu.
@@ -37,7 +38,11 @@ public class MainActivity extends AppCompatActivity {
                 OptionsActivity.getSavedRows(MainActivity.this));
         mine.setNumGold(OptionsActivity.getSavedGold(MainActivity.this));
 
+        TextView mainMenuTitle = findViewById(R.id.mainMenu);
+        mainMenuTitle.setText(R.string.main_menu_title);
+
         Button help = (Button)findViewById(R.id.helpButton);
+        help.setText(R.string.help);
         help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button options = (Button)findViewById(R.id.optionsButton);
+        options.setText(R.string.options);
         options.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button play = (Button)findViewById(R.id.playButton);
+        play.setText(R.string.play_game);
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
