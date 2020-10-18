@@ -4,9 +4,6 @@
     <string name="intro_title">Gold Rush!!</string>
     <string name="skip_button">Skip</string>
     <string name="title_activity_help">Help</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="main_menu_title">Main Menu</string>
     <string name="play_game">Play Game</string>
     <string name="options">Options</string>
@@ -14,10 +11,12 @@
     <string name="title_activity_options">Options</string>
     <string name="title_activity_game">GameActivity</string>
     <string name="intro_credit">By Trevor Bonas</string>
-    <string name="helpText">Playing\n\nThe aim of the game is to find all the gold with the fewest scans. Pressing a rock will either show a number, which is the number of gold bars that can be found in that rock\'s row and/or column, or will reveal a gold bar. Pressing an already found gold bar will do a scan.\n\nOptions\n\nIn the options menu the number of rows and columns in the game and the number of gold bars present can be changed.\n\nCredit\n\nMade by Trevor Bonas, October, 2020.\nResources gathered from Wikimedia Commons, freesound.org, and hasgraphics.com\nCourse website: https://opencoursehub.cs.sfu.ca/bfraser/grav-cms/cmpt276/home</string>
+    <string name="helpText">Playing\n\nThe aim of the game is to find all the gold with the fewest scans. Pressing a rock will either show a number, which is the number of gold bars that can be found in that rock\'s row and/or column, or will reveal a gold bar. Pressing an already found gold bar will do a scan.\n\nOptions\n\nIn the options menu the number of rows and columns in the game and the number of gold bars present can be changed.\n\nCredit\n\nMade by Trevor Bonas, October, 2020.\nResources gathered from Wikimedia Commons, freesound.org, and hasgraphics.com.</string>
     <string name="you_win">Congratulations,\nyou win!</string>
     <string name="mine_size">Mine Size</string>
     <string name="number_of_gold_bars">Number of Gold Bars</string>
     <string name="show_found">Show Found</string>
     <string name="show_scans">Show Scans</string>
+    <string name="courseTitle">Course website: </string>
+    <string name ="website">https://opencoursehub.cs.sfu.ca/bfraser/grav-cms/cmpt276/home</string>
 </resources>

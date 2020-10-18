@@ -9,11 +9,31 @@
 
     <TextView
         android:id="@+id/helpContent"
-        android:layout_width="564dp"
-        android:layout_height="286dp"
+        android:layout_width="565dp"
+        android:layout_height="248dp"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.331" />
+
+    <TextView
+        android:id="@+id/courseTitle"
+        android:layout_width="118dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/helpContent"
+        app:layout_constraintTop_toBottomOf="@+id/helpContent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/courseLink"
+        android:layout_width="445dp"
+        android:layout_height="22dp"
+        android:autoLink="web"
+        android:linksClickable="true"
+        app:layout_constraintStart_toEndOf="@+id/courseTitle"
+        app:layout_constraintTop_toBottomOf="@+id/helpContent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
