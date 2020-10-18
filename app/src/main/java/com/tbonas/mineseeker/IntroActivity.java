@@ -1,6 +1,7 @@
 package com.tbonas.mineseeker;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -10,6 +11,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * The welcoming intro animation.
+ *
+ * Displays the game title, creator, calls animations on ImageViews, provides a button to
+ * skip to the main menu, and prevents the user from using the android "back" button to
+ * return to the intro screen.
+ */
 public class IntroActivity extends android.app.Activity {
 
     private TextView mTextView;
@@ -47,7 +55,7 @@ public class IntroActivity extends android.app.Activity {
         });
 
         TextView title = findViewById(R.id.intro_title);
-        Animation titleAnimation = AnimationUtils.loadAnimation(this,
+       Animation titleAnimation = AnimationUtils.loadAnimation(this,
                 R.anim.intro_animation);
         title.startAnimation(titleAnimation);
 

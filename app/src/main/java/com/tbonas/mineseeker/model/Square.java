@@ -1,10 +1,18 @@
 package com.tbonas.mineseeker.model;
 
+/**
+ * The square the user interacts with.
+ *
+ * Holds four private variables, whether or not the given square has been clicked,
+ * whether it holds gold, the number of gold bars in its row and column, and whether
+ * it is a gold bar that has already been revealed and is being clicked again, to do
+ * another scan.
+ */
 public class Square {
-    Boolean clicked;
-    Boolean gold;
-    Boolean goldClicked;
-    int goldNearby;
+    private Boolean clicked;
+    private Boolean gold;
+    private Boolean goldClicked;
+    private int goldNearby;
 
     public Square() {
         gold = false;

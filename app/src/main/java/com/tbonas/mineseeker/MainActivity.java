@@ -13,6 +13,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+/**
+ * The main menu.
+ *
+ * Handles the initialization of the singleton and provides the UI elements
+ * for navigating through and playing the game.
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -25,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
         // Just in case we're returning from playing a game
         // Makes sure there's no gold left in already found places
         mine.clear();
+        // In case options have already been set before and application is
+        // starting again
+        mine.resize(OptionsActivity.getSavedCol(MainActivity.this),
+                OptionsActivity.getSavedRows(MainActivity.this));
+        mine.setNumGold(OptionsActivity.getSavedGold(MainActivity.this));
 
         Button help = (Button)findViewById(R.id.helpButton);
         help.setOnClickListener(new View.OnClickListener() {

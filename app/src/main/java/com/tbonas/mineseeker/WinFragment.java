@@ -12,6 +12,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
+/**
+ * Displays an alert, congratulations, message upon winning the game.
+ */
 public class WinFragment extends AppCompatDialogFragment {
     @NonNull
     @Override

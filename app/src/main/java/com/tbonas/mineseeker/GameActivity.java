@@ -24,6 +24,16 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+/**
+ * The game UI
+ *
+ * Provides interactivity with the game logic, sets squares according to the number
+ * of columns and rows in the mine singleton.
+ * Gold is shown as gold bars, I understand it is impossible to, while mining, crack open
+ * a rock and find a gold bar: it is the best representation of gold I could find on Wikimedia
+ * Commons.
+ *
+ */
 public class GameActivity extends AppCompatActivity {
     int foundOre;
     int scansUsed;

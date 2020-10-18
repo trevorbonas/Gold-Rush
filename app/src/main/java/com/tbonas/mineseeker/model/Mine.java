@@ -1,10 +1,23 @@
 package com.tbonas.mineseeker.model;
 
+import com.tbonas.mineseeker.MainActivity;
+import com.tbonas.mineseeker.OptionsActivity;
+
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.Random;
 
-// The logic behind the mine the player interacts with, mine as in a gold mine
+/**
+ * The logic behind the mine the player interacts with, mine as in a gold mine.
+ *
+ * Keeps an ArrayList of mine squares and keep tracks of the state of each square,
+ * the number of gold present, the rows and columns, and provides many getters and
+ * setters and well as methods for resizing, clearing, and initializing.
+ * There is some clunkiness with accessing the Square classes in the ArrayList,
+ * if this were written in C++ I would have the Square be a struct, unfortunately
+ * here every change in state of the mine requires calling Square getters and setters,
+ * making things more complicated.
+ */
 public class Mine {
     int numGold; // Total number of gold ores on the mine field
     private int rows;
@@ -21,9 +34,9 @@ public class Mine {
 
     private Mine() {
         // Private for singleton use
-        rows = 4; // Default, starting values upon app boot
-        columns = 7;
         numGold = 6;
+        rows = 4;
+        columns = 6;
         init();
     }
 
@@ -69,11 +82,12 @@ public class Mine {
                 }
             }
         }
+
         this.rows = rows;
         this.columns = columns;
     }
 
-    public void setNumMines(int x) {
+    public void setNumGold(int x) {
         if (x < 0 || x > columns * rows) {
             throw new InvalidParameterException();
         }

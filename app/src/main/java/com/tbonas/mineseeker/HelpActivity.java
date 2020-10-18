@@ -12,6 +12,9 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 
+/**
+ * Simply displays text about the game and provides a back button in the action bar.
+ */
 public class HelpActivity extends AppCompatActivity {
 
     @Override
